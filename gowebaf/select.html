@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<h2> {{.PageTitle}}</h1>
+</head>
+
+<script type='text/javascript'>
+ $(document).ready(function() {
+   $('input[name=TB]').change(function(){
+     $('form').submit();
+   });
+});
+</script>
+<body>
+
+
+{{with $1:=.TextBoxPV}}
+<p> Type Text To Translate</p>
+
+<form action="/selected">
+ Enter Text:  <input type="text" name={{.Name}}><br><br>
+ Enter Translation model ID:  <input type="text" name={{.Nametranslang}}><br>
+ (choose from the options below)<br><br>
+ <input type="submit" value="Translate">
+</form>
+
+{{end}}
+
+
+
+  {{with $2:=.Answer}}
+    <p>Your answer is {{$2}}</p>
+  {{end}}
+
+
+ 
+<h3> Available English Translations </h1>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0lax">Model ID</th>
+    <th class="tg-0lax">Source</th>
+    <th class="tg-0lax">Target</th>
+    <th class="tg-0lax">Domain</th>
+    <th class="tg-0lax">Customizable</th>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-ar</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Arabic (ar)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-cs</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Czech (cs)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-da</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Danish (da)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-de</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">German (de)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-es</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Spanish (es)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-fi</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Finnish (fi)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-fr</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">French (fr)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-hi</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Hindi (hi)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-it</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Italian (it)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-ja</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Japanese (ja)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-ko</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Korean (ko)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-nb</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Norwegian Bokmal (nb)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-nl</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Dutch (nl)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-pl</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Polish (pl)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-pt</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Portuguese (pt)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-ru</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Russian (ru)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-sv</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Swedish (sv)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-tr</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Turkish (tr)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-zh</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Simplified Chinese (zh)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">en-zh-TW</td>
+    <td class="tg-0lax">English (en)</td>
+    <td class="tg-0lax">Traditional Chinese (zh-TW)</td>
+    <td class="tg-0lax">general</td>
+    <td class="tg-0lax">TRUE</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+</body>
+</html>
