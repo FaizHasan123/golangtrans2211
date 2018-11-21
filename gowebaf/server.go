@@ -15,6 +15,13 @@ Name string
 Nametranslang string
 }
 
+type DropDown struct {
+Name string
+Value string
+}
+
+
+
 type RadioButton struct {
 	Name       string
 	Value      string
@@ -100,7 +107,7 @@ textToTranslate := []string{
 
 
 func inputfunc(w http.ResponseWriter, r *http.Request){
-   Title := "Hudibaba"
+   Title := "TRANSLATION USING WATSON TRANSLATOR API"
   
 
   MyTextBox := TextBox{"TB", "TB2"}
@@ -134,11 +141,16 @@ func UserSelected(w http.ResponseWriter, r *http.Request){
   texttotranslate := r.Form.Get("TB")
   transcode:= r.Form.Get("TB2")
 
+MyTextBox := TextBox{"TB", "TB2"}
+
   Title := "Translation Achieved"
   MyPageVariables := PageVariables{
     PageTitle: Title,
     Answer : translate(texttotranslate, transcode),
+    TextBoxPV: MyTextBox,
     }
+
+
 
  // generate page by passing page variables into template
     t, err := template.ParseFiles("select.html") //parse the html file homepage.html
