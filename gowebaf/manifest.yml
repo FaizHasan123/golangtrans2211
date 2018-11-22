@@ -8,4 +8,4 @@ applications:
   domain: not-used.net
   host: not-used
   env:
-    GOPACKAGENAME : gowebaf123123123123
+    GOPACKAGENAME : gowebaf
